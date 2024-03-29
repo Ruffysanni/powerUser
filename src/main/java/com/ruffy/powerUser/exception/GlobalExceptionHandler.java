@@ -45,4 +45,10 @@ public class GlobalExceptionHandler {
     public String handleNotFoundException(Exception e){
         return  e.getMessage();
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ExceptionHandler(IllegalStateException.class)
+    public String handleNoContentException(IllegalStateException e){
+        return  e.getMessage();
+    }
 }
